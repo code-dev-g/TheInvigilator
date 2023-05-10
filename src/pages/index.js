@@ -1,20 +1,23 @@
-import Head from "next/head";
-import {Box, Button} from "@mui/material";
-
-import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
-import app from "../utils/firebase";
+import { authHandle } from "../utils/firebase";
+import { useAuthState } from "react-firebase-hooks/auth";
+import Loading from "../components/Loading";
+import { Typography, Box, Button, Link } from "@mui/material";
 
 export default function Home() {
-  const auth = getAuth(app);
-
-  return (
-    <Box
-      display="flex"
-      justifyContent="center"
-      alignItems="center"
-      minHeight="100vh"
-    >
-      <Button variant="contained">The Invigilator</Button>
-    </Box>
+	const [user, loading, error] = useAuthState(authHandle);
+	if (loading) {
+		return <Loading />;
+	}
+	if (error) {
+		return <div>{error}</div>;
+	}
+	return (
+		<>
+			<Box sx={{ display: "flex", flexDirection: "column", m: "4rem" }}>
+				<Typography variant="h5" sx={{ textAlign: "center" }}>
+          Hello there! Welcome to TheInvigilator
+        </Typography>
+			</Box>
+		</>
 	);
 }
