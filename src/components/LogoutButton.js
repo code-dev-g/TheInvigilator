@@ -2,12 +2,17 @@ import { Button } from "@mui/material";
 import { signOut } from "firebase/auth";
 import { authHandle } from "../utils/firebase";
 import LogoutIcon from "@mui/icons-material/Logout";
+import { useRouter } from "next/router";
 
-function LogoutButton() {
+function LogoutButton () {
+	const router = useRouter();
 	return (
 		<div>
 			<Button
-				onClick={() => signOut(authHandle)}
+				onClick={ () => {
+					signOut( authHandle );
+					router.push( "/" );
+				} }
 				variant="contained"
 				startIcon={<LogoutIcon />}
 			>
