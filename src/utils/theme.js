@@ -5,7 +5,7 @@ const theme = createTheme({
 	palette: {
 		type: "dark",
 		primary: {
-			main: "#ff3d00",
+			main: "#f1f1ff",
 		},
 		secondary: {
 			main: "#212121",
@@ -14,11 +14,11 @@ const theme = createTheme({
 			main: "#2196f3",
 		},
 		background: {
-			default: "#212121",
+			default: "#E6E6FA",
 		},
 		text: {
-			primary: "#ffffff",
-			secondary: "#ffffff",
+			primary: "#333333",
+			secondary: "#222222",
 			disabled: "rgba(255,255,255,0.81)",
 		},
 		error: {

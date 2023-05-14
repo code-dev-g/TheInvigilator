@@ -7,7 +7,7 @@ import Link from "next/link";
 
 function Header() {
 	return (
-		<AppBar position="static" sx={{ backgroundColor: "#212121" }}>
+		<AppBar position="static" sx={{ backgroundColor: "#f12151" }}>
 			<Toolbar
 				variant="dense"
 				sx={{ display: "flex", justifyContent: "space-between", width: "auto" }}

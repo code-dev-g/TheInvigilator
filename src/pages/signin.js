@@ -73,15 +73,14 @@ const LoginForm = () => {
 
     return (
         <Box>
-
-            <Typography variant="h3">Login</Typography>
-            <form onSubmit={ formik.handleSubmit } style={ { display: "flex", flexDirection: "column", alignItems: "center" } }>
+            <form onSubmit={ formik.handleSubmit } style={ { display: "flex", flexDirection: "column", alignItems: "center"} }>
+                <Typography variant="h3" style={ { marginBottom: "16px"} }>Sign In</Typography>
                 <TextField
                     id="email"
                     name="email"
                     label="Email address"
                     variant="outlined"
-                    style={ { marginBottom: "16px" } }
+                    style={ { marginBottom: "18px",width: "300px"} }
                     value={ formik.values.email }
                     onChange={ formik.handleChange }
                     onBlur={ formik.handleBlur }
@@ -94,7 +93,7 @@ const LoginForm = () => {
                     label="Password"
                     type="password"
                     variant="outlined"
-                    style={ { marginBottom: "16px" } }
+                    style={ { marginBottom: "18px",width: "300px"} }
                     value={ formik.values.password }
                     onChange={ formik.handleChange }
                     onBlur={ formik.handleBlur }
@@ -104,6 +103,7 @@ const LoginForm = () => {
                 <Select    
                     id="type"
                     name="type"
+                    style={ { marginBottom: "18px",width: "300px"} }
                     value={ formik.values.type }
                     onChange={ formik.handleChange }
                 >
@@ -114,6 +114,7 @@ const LoginForm = () => {
                     type="submit"
                     variant="contained"
                     color="primary"
+                    style={ { marginBottom: "18px"}}
                     disabled={ formik.isSubmitting }
                 >
                     Sign In
@@ -121,7 +122,8 @@ const LoginForm = () => {
                 <Button
                     type="button"
                     variant="outlined"
-                    color="primary"
+                    color="secondary"
+                    style={ { marginBottom: "18px",width: "300px"}}
                     onClick={ () => {
                         router.push( '/forgotpassword' );
                     } }

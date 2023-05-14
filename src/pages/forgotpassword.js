@@ -31,23 +31,23 @@ const ForgotPasswordForm = () => {
     
     return (
         <Box>
-            <Typography variant="h4" align="center" gutterBottom>
+            <Typography variant="h4" align="center" sx={{fontWeight:"bold",marginBottom: "30px"}} gutterBottom>
                 Forgot Password
             </Typography>
             <form onSubmit={ formik.handleSubmit } style={ { display: "flex", flexDirection: "column", alignItems: "center" } }>
                 
                     <Box>
-                        <TextField
-                            name="email"
-                            type="email"
-                            label="Email"
-                            as={ TextField }
-                            error={ formik.touched.email && Boolean( formik.errors.email ) }
-                            helperText={ formik.touched.email && formik.errors.email }
-                            variant="outlined"
-                            fullWidth
-                            margin="normal"
-                        />
+                    <TextField
+                    id="email"
+                    name="email"
+                    label="Email address"
+                    variant="outlined"
+                    style={ { marginBottom: "18px",width: "300px"} }
+                    value={ formik.values.email }
+                    onChange={ formik.handleChange }
+                    onBlur={ formik.handleBlur }
+                    error={ formik.touched.email && Boolean( formik.errors.email ) }
+                    helperText={ formik.touched.email && formik.errors.email }></TextField>
                     </Box>
                     <Box>
                         <Button
